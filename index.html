@@ -15,8 +15,8 @@
         }
 
         .form-container {
-            max-width: 400px;
-            width: 40vw;
+            max-width: 1000px;
+            width: 95vw;
             padding: 15px;
             margin: 0;
             background-color: rgba(255, 255, 255, 0.8);
@@ -25,8 +25,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 16px;
         }
 
         .form-container label {
@@ -58,6 +57,10 @@
             background-color: #45a049;
         }
 
+        h1 {
+            font-size: min(60vw, 600px);
+        }
+
         h2 {
             color: black;
         }
@@ -67,9 +70,20 @@
             margin-bottom: 16px;
          }
 
-         .code-element {
-            font-size: min(60vw, 600px);'
-         }
+
+        .-container {
+            max-width: 1000px;
+            width: 95vw;
+            padding: 15px;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
         .share-button {
             display: flex;
@@ -96,9 +110,10 @@
 </head>
 <body>
     <div class="form-container" id="formContainer">
-        <h2>Share a color and find your friends</h2>
 
         <form id="colorForm">
+            <h2 textA="center">Share a color and find your friends</h2>
+
             <input type="text" id="rgbInput" placeholder="Enter RGB color (hex)" pattern="^[0-9A-Fa-f]{6}$" required>
 
             <input type="text" id="codeInput" placeholder="Enter code (2 characters)" pattern="^.{2}$" required>
@@ -110,6 +125,8 @@
 
     <script src="app.js"></script>
 
-    <button class="share-button" id="shareButton" style="display: none;">Share</button>
+    <div class="code-container" id="codeContainer" style="display: none;">
+        <h1 class="codeElement" id="codeElement"></h1>
+    </div>
 </body>
 </html>

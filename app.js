@@ -67,9 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
             } else {
                 const newCodeElement = document.createElement('div');
                 newCodeElement.id = 'codeElement';
-                newCodeElement.class = 'code-element';
                 newCodeElement.textContent = code;
-                newCodeElement.style = 'font-size: min(60vw, 600px);'
                 document.body.appendChild(newCodeElement);
             }
         } else {
@@ -96,7 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const g = (bigint >> 8) & 255;
         const b = bigint & 255;
         return { r, g, b };
-    }
+    }4
 
     function calculateBrightness(r, g, b) {
         return Math.sqrt(r * r * 0.299 + g * g * 0.587 + b * b * 0.114);
@@ -121,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function showShareButton() {
-        shareButton.style.display = 'block';
+        codeContainer.style.display = 'block';
     }
 
     function updateURLParams(rgbColor, code) {
