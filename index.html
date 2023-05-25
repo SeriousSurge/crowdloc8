@@ -1,22 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Background Color</title>
+    <title>Crowdloc8</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
             height: 100vh;
-            font-size: min(60vw, 600px);
             color: white;
             font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            max-width: 400px;
+            width: 40vw;
+            padding: 15px;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-container label {
+            margin-top: 0;
+            flex: 1 100%;
+        }
+
+        .form-container input[type="text"],
+        .form-container button {
+            padding: 5px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="text"] {
+            margin-top: 0;
+            flex: 1 100%;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        input, button { 
+            margin-top: 16px;
+            margin-bottom: 16px;
+         }
+
+         .code-element {
+            font-size: min(60vw, 600px);'
+         }
+
+        .share-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .share-button a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        .share-button a:hover {
+            text-decoration: underline;
+        }
+
+        .share-button {
+            margin: 50px;
         }
     </style>
 </head>
 <body>
+    <div class="form-container" id="formContainer">
+        <h2>Share a color and find your friends</h2>
+
+        <form id="colorForm">
+            <input type="text" id="rgbInput" placeholder="Enter RGB color (hex)" pattern="^[0-9A-Fa-f]{6}$" required>
+
+            <input type="text" id="codeInput" placeholder="Enter code (2 characters)" pattern="^.{2}$" required>
+
+            <button type="submit">Set Color</button>
+            <button type="button" id="randomButton">Random Values</button>
+        </form>
+    </div>
+
     <script src="app.js"></script>
+
+    <button class="share-button" id="shareButton" style="display: none;">Share</button>
 </body>
 </html>
